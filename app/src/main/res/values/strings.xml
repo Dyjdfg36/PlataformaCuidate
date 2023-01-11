@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PlataformaCuidate</string>
+    <string name="txt_user">Usuario</string>
+    <string name="txt_pass">Contraseña</string>
+</resources>
