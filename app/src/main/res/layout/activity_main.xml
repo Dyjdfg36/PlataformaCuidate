@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEFEFE"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="345dp"
         android:layout_height="126dp"
         android:layout_marginStart="8dp"
+        android:gravity="center"
         android:text="Bienvenido"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,8 +20,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        android:gravity="center" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <EditText
         android:id="@+id/editTextUser"
@@ -57,10 +58,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/boton_redondo"
         android:onClick="ingresarSesion"
         android:text="Ingresar"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
@@ -74,5 +77,25 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/icono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/boton_redondo"
+        android:text="Registrar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

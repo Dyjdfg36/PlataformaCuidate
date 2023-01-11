@@ -8,6 +8,14 @@
 
 
     <TextView
+        android:id="@+id/icono2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,6 +49,7 @@
         tools:layout_editor_absoluteX="250dp"
         tools:layout_editor_absoluteY="646dp" />
 
+
     <TextView
         android:id="@+id/txtVistaGeneral"
         android:layout_width="wrap_content"
@@ -54,9 +63,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_agregarActividad5"
-        app:layout_constraintVertical_bias="0.542"
-        ></TextView>
-
+        app:layout_constraintVertical_bias="0.545"></TextView>
 
     <TextView
         android:id="@+id/txtListadoTareas"
@@ -95,7 +102,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="TextView" />
+            android:text="Leer un libro" />
 
         <TextView
             android:id="@+id/textView13"
@@ -109,7 +116,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="TextView" />
+            android:text="Limpiar la sala" />
 
         <TextView
             android:id="@+id/textView14"
@@ -123,7 +130,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="TextView" />
+            android:text="Tirar la basura" />
 
         <TextView
             android:id="@+id/textView15"
@@ -137,7 +144,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="TextView" />
+            android:text="Proyecto de programacion" />
 
         <TextView
             android:id="@+id/textView16"
@@ -151,7 +158,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="TextView" />
+            android:text="Ir al gimnasio" />
 
         <TextView
             android:id="@+id/textView17"
@@ -165,7 +172,7 @@
             android:paddingLeft="8dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="TextView" />
+            android:text="Leer un articulo" />
 
     </LinearLayout>
 
