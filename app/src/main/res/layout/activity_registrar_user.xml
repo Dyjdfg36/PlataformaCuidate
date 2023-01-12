@@ -30,32 +30,36 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/boton_redondo"
-        android:text="Agregar"
+        android:text="siguiente"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="164dp"
         android:orientation="vertical"
-        android:layout_marginLeft="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_marginBottom="10dp"
             android:width="250dp"
             android:height="50dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:hint="Nombre"
             android:inputType="textPersonName"
-            android:paddingStart="10dp"
-            android:text="Horas por realizar" />
+            android:paddingStart="10dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
@@ -65,9 +69,9 @@
             android:width="250dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:hint="Primer apellido"
             android:inputType="textPersonName"
-            android:paddingStart="10dp"
-            android:text="Nombre de la actividad" />
+            android:paddingStart="10dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName5"
@@ -78,9 +82,9 @@
             android:height="50dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:hint="Segundo Apellido"
             android:inputType="textPersonName"
-            android:paddingStart="10dp"
-            android:text="Horas por realizar" />
+            android:paddingStart="10dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName6"
@@ -91,10 +95,25 @@
             android:height="50dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:hint="Telefono"
             android:inputType="textPersonName"
             android:paddingStart="10dp"
-            android:text="Horas por realizar"
             tools:layout_editor_absoluteX="72dp"
             tools:layout_editor_absoluteY="214dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName7"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:width="250dp"
+            android:height="50dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:hint="Correo Electronico"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
