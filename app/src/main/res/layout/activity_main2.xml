@@ -40,8 +40,12 @@
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="@drawable/boton_redondo"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
             android:text="TextView"
-            android:textColor="@color/teal_700" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/textView7"
@@ -56,8 +60,12 @@
             android:id="@+id/txtPaterno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="@drawable/boton_redondo"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
             android:text="TextView"
-            android:textColor="@color/teal_700" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/textView8"
@@ -72,8 +80,12 @@
             android:id="@+id/txtMaterno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="@drawable/boton_redondo"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
             android:text="TextView"
-            android:textColor="@color/teal_700" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/textView9"
@@ -88,8 +100,12 @@
             android:id="@+id/txtTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="@drawable/boton_redondo"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
             android:text="TextView"
-            android:textColor="@color/teal_700" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/textView11"
@@ -104,8 +120,12 @@
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:height="30dp"
+            android:background="@drawable/boton_redondo"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
             android:text="TextView"
-            android:textColor="@color/teal_700" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

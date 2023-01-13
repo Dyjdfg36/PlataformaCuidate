@@ -25,7 +25,6 @@ import java.util.jar.JarException;
 
 public class MainActivity2 extends AppCompatActivity {
     private TextView txtBienvenida;
-    varGlobales va=varGlobales.getInstance();
 
     private TextView  txtNombre,txtPaterno,txtMaterno,txtTelefono,txtEmail;
     String d1,d2;

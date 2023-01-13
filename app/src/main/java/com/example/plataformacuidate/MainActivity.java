@@ -39,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
     private EditText  user;
     private EditText pass;
     private TextView aux;
+    private Button btnReg;
     private Button btn;
     public String x="Texto de prueba";
-    //private clsConexion con=new clsConexion();
-    //varGlobales va=varGlobales.getInstance();
     RequestQueue requestQueue;
 
     private static final String URL1= "http://172.100.85.161/android/fetch.php";
 
 
-    @SuppressLint("MissingInflatedId")
+    //@SuppressLint("MissingInflatedId")
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -59,11 +59,19 @@ public class MainActivity extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.editTextPassword);
         aux = (TextView) findViewById(R.id.textView3);
         btn =(Button) findViewById(R.id.button);
+        btnReg=(Button) findViewById(R.id.btnRegistrar);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ingresarSesion(user.getText().toString(),pass.getText().toString());
+            }
+        });
+
+        btnReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registrar();
             }
         });
     }
@@ -72,27 +80,6 @@ public class MainActivity extends AppCompatActivity {
         /*String user_String=user.getText().toString();
         String pass_String=pass.getText().toString();*/
         String nombre="";
-        //try{
-            /*Class.forName("org.postgresql.Driver");
-            // "jdbc:postgresql://IP:PUERTO/DB", "USER", "PASSWORD");
-            // Si estás utilizando el emulador de android y tenes el PostgreSQL en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
-            //Connection conn = DriverManager.getConnection("jdbc:postgresql://192.168.90.95:5432/appCuidate", "test", "test");
-            Connection conn=DriverManager.getConnection("jdbc:postgresql://192.168.90.95:5432/appCuidate","postgres","20151130");
-            String stsql = "SELECT nombre FROM usuarios";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(stsql);
-            while (rs.next()) {
-                nombre = rs.getString(1);
-                System.out.println("Employee number = " + nombre);
-            }
-
-            rs.close();
-            conn.close();
-        } catch (SQLException se) {
-            System.out.println("oops! No se puede conectar. Error: " + se.toString());
-        } catch (ClassNotFoundException e) {
-        System.out.println("oops! No se encuentra la clase. Error: " + e.getMessage());
-        }*/
         StringRequest stringRequest =new StringRequest(
                 Request.Method.POST,
                 URL1,
@@ -122,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
         //Intent i =new Intent(MainActivity.this, MainActivity2.class);
         i.putExtra("dato01",user_String);
         i.putExtra("dato02",pass_String);
+        startActivity(i);
+
+    }
+    public void registrar() {
+        Intent i =new Intent(MainActivity.this, interfazPrincipal.class);
+        //Intent i =new Intent(MainActivity.this, MainActivity2.class);
         startActivity(i);
 
     }

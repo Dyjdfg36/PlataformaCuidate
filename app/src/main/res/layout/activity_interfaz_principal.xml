@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_agregarActividad3"
+        android:id="@+id/btn_Actividad2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_agregarActividad" />
 
     <Button
-        android:id="@+id/btn_agregarActividad4"
+        android:id="@+id/btn_Actividad3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -40,8 +40,8 @@
         android:background="@drawable/boton_redondo"
         android:text="Actividad 3"
         android:textColor="#fff"
-        app:layout_constraintStart_toEndOf="@+id/btn_agregarActividad3"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregarActividad2" />
+        app:layout_constraintStart_toEndOf="@+id/btn_Actividad2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Actividad1" />
 
     <TextView
         android:id="@+id/textView4"
@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/btn_agregarActividad2"
+        android:id="@+id/btn_Actividad1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -85,19 +85,19 @@
 
 
     <Button
-        android:id="@+id/btn_agregarActividad5"
+        android:id="@+id/btn_abrirPrincipal"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="42dp"
         android:background="@drawable/ic_baseline_fact_check_24"
         android:textColor="#fff"
-        app:layout_constraintEnd_toStartOf="@+id/btn_agregarActividad6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_abrirActividades"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="646dp" />
 
     <Button
-        android:id="@+id/btn_agregarActividad6"
+        android:id="@+id/btn_abrirActividades"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/ic_lista"
@@ -118,7 +118,7 @@
         android:text="Vista General"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregarActividad5"
+        app:layout_constraintTop_toBottomOf="@+id/btn_abrirPrincipal"
         app:layout_constraintVertical_bias="0.542"></TextView>
 
     <TextView
@@ -134,7 +134,7 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregarActividad6"
+        app:layout_constraintTop_toBottomOf="@+id/btn_abrirActividades"
         app:layout_constraintVertical_bias="0.545"></TextView>
 
 
