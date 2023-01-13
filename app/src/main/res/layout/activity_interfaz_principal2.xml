@@ -11,6 +11,8 @@
         android:id="@+id/icono2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="100dp"
+        android:height="100dp"
         android:background="@mipmap/ic_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,73 +21,71 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
         android:text="BIENVENIDO"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icono2"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/btn_abrirPrincipal"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="42dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/ic_baseline_fact_check_24"
-        android:textColor="#fff"
         android:backgroundTint="#ABB2B9"
-        app:layout_constraintEnd_toStartOf="@+id/btn_abrirActividades"
-        app:layout_constraintHorizontal_bias="0.398"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="646dp" />
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/txtVistaGeneral"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_abrirActividades"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/ic_lista"
         android:backgroundTint="#018685"
         android:textColor="#fff"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="646dp" />
-
+        app:layout_constraintBottom_toTopOf="@+id/txtListadoTareas"
+        app:layout_constraintStart_toEndOf="@+id/btn_abrirPrincipal" />
 
     <TextView
         android:id="@+id/txtVistaGeneral"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="144dp"
         android:width="115dp"
         android:background="@drawable/boton_inactivo"
         android:paddingStart="10dp"
         android:text="Vista General"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_abrirPrincipal"
-        app:layout_constraintVertical_bias="0.545"></TextView>
+        app:layout_constraintStart_toStartOf="parent"></TextView>
 
     <TextView
         android:id="@+id/txtListadoTareas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="145dp"
         android:width="120dp"
         android:background="@drawable/boton_redondo"
         android:paddingStart="5dp"
         android:text="Listado de tareas"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtVistaGeneral"
-        app:layout_constraintTop_toBottomOf="@+id/btn_abrirActividades"
-        app:layout_constraintVertical_bias="0.545"></TextView>
+        app:layout_constraintStart_toEndOf="@+id/txtVistaGeneral"></TextView>
 
     <LinearLayout
-        android:layout_width="260dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -95,84 +95,102 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:height="30dp"
+            android:height="50dp"
             android:background="@drawable/boton_redondo"
             android:drawableStart="@drawable/ic_book"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="15dp"
             android:paddingLeft="8dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="Leer un libro" />
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Leer un libro"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:height="30dp"
+            android:height="50dp"
             android:background="@drawable/boton_redondo"
             android:drawableStart="@drawable/ic_campana"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="15dp"
             android:paddingLeft="8dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="Limpiar la sala" />
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Limpiar la sala"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:height="30dp"
+            android:height="50dp"
             android:background="@drawable/boton_redondo"
             android:drawableStart="@drawable/ic_campana"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="15dp"
             android:paddingLeft="8dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="Tirar la basura" />
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Tirar la basura"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:height="30dp"
+            android:height="50dp"
             android:background="@drawable/boton_redondo"
             android:drawableStart="@drawable/box_archive_solid"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="15dp"
             android:paddingLeft="8dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="Proyecto de programacion" />
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Proyecto de programacion"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:height="30dp"
+            android:height="50dp"
             android:background="@drawable/boton_redondo"
             android:drawableStart="@drawable/ic_deporte"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="15dp"
             android:paddingLeft="8dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="Ir al gimnasio" />
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Ir al gimnasio"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:height="30dp"
+            android:height="50dp"
             android:background="@drawable/boton_redondo"
             android:drawableStart="@drawable/ic_book"
-            android:drawablePadding="5dp"
+            android:drawablePadding="10dp"
+            android:paddingStart="15dp"
             android:paddingLeft="8dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="Leer un articulo" />
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Leer un articulo"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
