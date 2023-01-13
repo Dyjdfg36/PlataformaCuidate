@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.editTextPassword);
         aux = (TextView) findViewById(R.id.textView3);
         btn =(Button) findViewById(R.id.button);
-        btnReg=(Button) findViewById(R.id.btnRegistrar);
+        btnReg=(Button) findViewById(R.id.button2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
