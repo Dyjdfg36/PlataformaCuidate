@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void registrar() {
-        Intent i =new Intent(MainActivity.this, interfazPrincipal.class);
+        Intent i =new Intent(MainActivity.this, registrar_user.class);
         //Intent i =new Intent(MainActivity.this, MainActivity2.class);
         startActivity(i);
 

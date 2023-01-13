@@ -96,7 +96,7 @@
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="Telefono"
-            android:inputType="textPersonName"
+            android:inputType="phone"
             android:paddingStart="10dp"
             tools:layout_editor_absoluteX="72dp"
             tools:layout_editor_absoluteY="214dp" />
@@ -111,7 +111,7 @@
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="Correo Electronico"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:paddingStart="10dp" />
 
         <EditText
@@ -137,7 +137,7 @@
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="Contraseña"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingStart="10dp" />
 
         <EditText
@@ -150,8 +150,9 @@
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="Repetir Contraseña"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingStart="10dp" />
+
 
     </LinearLayout>
 

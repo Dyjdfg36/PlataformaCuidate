@@ -12,16 +12,18 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class registrar_user extends AppCompatActivity {
     private EditText  user;
-    private EditText pass;
+    //private EditText pass;
     private EditText nombre;
     private EditText apellidop;
     private EditText apellidom;
@@ -30,11 +32,16 @@ public class registrar_user extends AppCompatActivity {
     private EditText pass2;
     private EditText email;
     private Button btn;
-    private static final String URL1= "http://172.100.85.161/android/save.php";
+    RequestQueue requestQueue;
+    //private static final String URL1= "http://172.100.85.161/android/save.php";
+    private static final String URL1= "http://192.168.90.95/android/save.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_user);
+
+        requestQueue= Volley.newRequestQueue(this);
+
         nombre= (EditText) findViewById(R.id.editTextNombre);
         apellidop= (EditText) findViewById(R.id.editTextApellidoP);
         apellidom= (EditText) findViewById(R.id.editTextApellidoM);
@@ -53,16 +60,17 @@ public class registrar_user extends AppCompatActivity {
                     apellidom.getText().toString(),
                     telefono.getText().toString(),
                     user.getText().toString(),
-                    pass1.getText().toString()
+                    pass1.getText().toString(),
+                    email.getText().toString()
                 );
             }
         });
     }
 
-    public void ingresarSesion(String nombre_String,String apellidop_String,String apellidom_String,String telefono_String,String user_String,String pass_String) {
+    //public void ingresarSesion(final String nombre,final String apellidop,final String apellidom_String,final String telefono_String,final String user_String,final String pass_String,final String email_String) {
+    public void ingresarSesion(final String nombre,final String apellido_p,final String apellido_m,final String telefono,final String user,final String pass,final String email) {
         /*String user_String=user.getText().toString();
         String pass_String=pass.getText().toString();*/
-        String nombre="";
         StringRequest stringRequest =new StringRequest(
                 Request.Method.POST,
                 URL1,
@@ -82,16 +90,21 @@ public class registrar_user extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params= new HashMap<>();
-                params.put("user",user_String);
-                params.put("name",pass_String);
-
+                params.put("usuario",user);
+                params.put("password",pass);
+                params.put("nombre",nombre);
+                params.put("apellido_p",apellido_p);
+                params.put("apellido_m",apellido_m);
+                params.put("telefono",telefono);
+                params.put("email",email);
                 return super.getParams();
             }
         };
+        requestQueue.add(stringRequest);
         Intent i =new Intent(registrar_user.this, interfazPrincipal.class);
         //Intent i =new Intent(MainActivity.this, MainActivity2.class);
-        i.putExtra("dato01",user_String);
-        i.putExtra("dato02",pass_String);
+        i.putExtra("dato01",user);
+        i.putExtra("dato02",pass);
         startActivity(i);
 
     }
