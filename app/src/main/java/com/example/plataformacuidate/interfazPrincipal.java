@@ -10,9 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,15 +27,20 @@ public class interfazPrincipal extends AppCompatActivity {
     private Button abrirPrincipal;
     private Button abrirActividades;
     private TextView txtBienvenida;
+    private TextView txtAux;
 
     private TextView  txtNombre,txtPaterno,txtMaterno,txtTelefono,txtEmail;
     String d1,d2;
-
+    RequestQueue requestQueue;
+    RequestQueue requestQueue2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interfaz_principal);
+
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue2= Volley.newRequestQueue(this);
 
         agregarAct=(Button) findViewById(R.id.btn_agregarActividad);
         Actividad1=(Button) findViewById(R.id.btn_Actividad1);
@@ -42,7 +49,9 @@ public class interfazPrincipal extends AppCompatActivity {
         abrirPrincipal=(Button) findViewById(R.id.btn_abrirPrincipal);
         abrirActividades=(Button) findViewById(R.id.btn_abrirActividades);
         txtBienvenida=(TextView) findViewById(R.id.textView4);
-
+        txtAux=(TextView) findViewById(R.id.textViewPrueba);
+        recibirDatos();
+        validarinicio();
         agregarAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +93,8 @@ public class interfazPrincipal extends AppCompatActivity {
                 verActividades();
             }
         });
+
+        //readUser();
     }
 
     private void agregarAct(){
@@ -131,22 +142,10 @@ public class interfazPrincipal extends AppCompatActivity {
 
     }
 
-    private void readUser(){
+    private void validarinicio(){
         //String URL = "http://192.168.90.95/appcuidate/fetch.php?usuario=" + d1 +"password="+ d2;
-        String URL = "http://192.168.0.131/android/fetch.php?usuario="+d1+"&password="+d2;
-        //String URL = "https://jsonplaceholder.typicode.com/posts/1";
-        //String URL = "http://my-json-feed";
-        //String cadenaJson = "{'nombre':Maggie,'Edad':3}";
-       /*/JSONObject objJSON=new JSONObject();
-       try {
-           objJSON.put("name", "Víctor");
-           objJSON.put("age", 42);
-           System.out.println(objJSON.toString());
-           //txtNombre = (TextView) findViewById(R.id.txtNombre);
-           //txtNombre.setText(objJSON.getString("name"));
-       } catch (JSONException e) {
-           e.printStackTrace();
-       }*/
+        String URL = "http://172.100.79.237/android/validarinicio.php?usuario="+d1+"&password="+d2;
+        
 
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(
                 Request.Method.GET,
@@ -155,22 +154,23 @@ public class interfazPrincipal extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        String nombre,paterno,materno,telefono,email;
-                        Toast.makeText(interfazPrincipal.this,"RESPONSE RECEIVED",Toast.LENGTH_SHORT).show();
+                        String nombre,paterno,materno,telefono,email,validacion;
+                        int val;
+                        //Toast.makeText(interfazPrincipal.this,"RESPONSE RECEIVED",Toast.LENGTH_SHORT).show();
 
                         try {
-                            //txtNombre = (TextView) findViewById(R.id.txtNombre);
-                            nombre=response.getString("nombre");
-                            txtNombre.setText(nombre);
-                            paterno=response.getString("apellido_p");
-                            txtPaterno.setText(paterno);
-                            materno=response.getString("apellido_m");
-                            txtMaterno.setText(materno);
-                            telefono=response.getString("telefono");
-                            txtTelefono.setText(telefono);
-                            email=response.getString("email");
-                            txtEmail.setText(email);
-
+                            validacion=response.getString("COUNT(usuario)");
+                            txtAux.setText(validacion);
+                            val=Integer.parseInt(validacion);
+                            if(val==0){
+                                Toast.makeText(interfazPrincipal.this,"No se encontro usuario",Toast.LENGTH_SHORT).show();
+                                Intent i =new Intent(interfazPrincipal.this, MainActivity.class);
+                                //Intent i =new Intent(MainActivity.this, MainActivity2.class);
+                                startActivity(i);
+                            }
+                            else{
+                                Toast.makeText(interfazPrincipal.this,"Iniciando sesion",Toast.LENGTH_SHORT).show();
+                            }
                         }
                         catch (JSONException e){
                             e.printStackTrace();
@@ -187,6 +187,8 @@ public class interfazPrincipal extends AppCompatActivity {
         );
         requestQueue.add(jsonObjectRequest);
     }
+
+
 
 
 }
