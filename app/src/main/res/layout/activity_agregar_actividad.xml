@@ -38,7 +38,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingStart="10dp"
-        android:text="Nombre de la actividad"
+        android:hint="Nombre de la actividad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -54,54 +54,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingStart="10dp"
-        android:text="Horas por realizar"
+        android:hint="Horas por realizar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombreAct" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/boton_redondo"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHoras">
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#000000"
-            android:drawableStart="@drawable/box_archive_solid" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#000000"
-            android:drawableStart="@drawable/ic_deporte" />
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableStart="@drawable/ic_campana" />
-
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:drawableStart="@drawable/ic_book"
-            android:enabled="true" />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/btnAgregarAct1"
@@ -109,10 +65,83 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="36dp"
+
         android:background="@drawable/boton_redondo"
         android:text="Agregar"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/radio" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_redondo"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHoras">/>
+
+        <RadioButton
+            android:id="@+id/rd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:buttonTint="@color/white"
+            android:drawableStart="@drawable/box_archive_solid"
+            android:onClick="checar"
+            android:textColorLink="#fff"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="446dp" />
+
+        <RadioButton
+            android:id="@+id/rd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:buttonTint="@color/white"
+            android:drawableStart="@drawable/ic_deporte"
+            android:onClick="checar" />
+
+        <RadioButton
+            android:id="@+id/rd3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/white"
+            android:drawableStart="@drawable/ic_book"
+            android:onClick="checar"
+            tools:layout_editor_absoluteX="119dp"
+            tools:layout_editor_absoluteY="399dp" />
+
+        <RadioButton
+            android:id="@+id/rd4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00000000"
+            android:buttonTint="@color/white"
+            android:checked="true"
+            android:drawableStart="@drawable/ic_campana"
+            android:enabled="true"
+            android:focusable="true"
+            android:onClick="checar"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="329dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="348dp"
+        android:onClick="checar"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

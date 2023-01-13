@@ -34,7 +34,7 @@ public class registrar_user extends AppCompatActivity {
     private Button btn;
     RequestQueue requestQueue;
     //private static final String URL1= "http://172.100.85.161/android/save.php";
-    private static final String URL1= "http://192.168.90.95/android/save.php";
+    private static final String URL1= "http://192.168.0.101/android/save.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,8 +69,7 @@ public class registrar_user extends AppCompatActivity {
 
     //public void ingresarSesion(final String nombre,final String apellidop,final String apellidom_String,final String telefono_String,final String user_String,final String pass_String,final String email_String) {
     public void ingresarSesion(final String nombre,final String apellido_p,final String apellido_m,final String telefono,final String user,final String pass,final String email) {
-        /*String user_String=user.getText().toString();
-        String pass_String=pass.getText().toString();*/
+
         StringRequest stringRequest =new StringRequest(
                 Request.Method.POST,
                 URL1,
@@ -93,11 +92,11 @@ public class registrar_user extends AppCompatActivity {
                 params.put("usuario",user);
                 params.put("password",pass);
                 params.put("nombre",nombre);
-                params.put("apellido_p",apellido_p);
-                params.put("apellido_m",apellido_m);
+                params.put("apellidop",apellido_p);
+                params.put("apellidom",apellido_m);
                 params.put("telefono",telefono);
                 params.put("email",email);
-                return super.getParams();
+                return params;
             }
         };
         requestQueue.add(stringRequest);
